@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -47,22 +48,42 @@ namespace SistemaCuotas.Admin
                 {
                     try
                     {
-                        int columnCount = dgvCiudadanos.Columns.Count;
-                        string columnNames = "";
-                        string[] outputCsv = new string[dgvCiudadanos.Rows.Count + 1];
-                        for (int i = 0; i < columnCount; i++)
+                        var ciudadanos = new List<CiudadanoDomainModel>();
+                        if (string.IsNullOrEmpty(txtManzanaSearch.Text.Trim()))
                         {
-                            columnNames += dgvCiudadanos.Columns[i].HeaderText.ToString() + ",";
-                        }
-                        outputCsv[0] += columnNames;
-
-                        for (int i = 1; i < dgvCiudadanos.Rows.Count; i++)
+                            ciudadanos = GetCiudadanos().Where(c => c.Edad < 60).ToList();
+                        } else
                         {
-                            for (int j = 0; j < columnCount; j++)
-                            {
-                                outputCsv[i] += dgvCiudadanos.Rows[i - 1].Cells[j].Value.ToString() + ",";
-                            }
+                            ciudadanos = GetCiudadanos(int.Parse(txtManzanaSearch.Text.Trim())).Where(c => c.Edad < 60).ToList();
                         }
+                        string columNames = "Clave,Nombre,Status,Edad,Ocupación,Direción,Manzana";
+                        string[] outputCsv = new string[ciudadanos.Count + 1];
+                        outputCsv[0] = columNames;
+                        for (int i = 0; i < ciudadanos.Count; i++)
+                        {
+                            var ciudadano = ciudadanos[i];
+                            var rowItem = ciudadano.Clave + "," + ciudadano.FullName + "," + ciudadano.CuotasStatus + "," + ciudadano.Edad + "," + ciudadano.OcupacionDomainModel.Nombre + "," + ciudadano.Direccion + "," + ciudadano.Manzana;
+                            outputCsv[i + 1] = rowItem;
+                        }
+                        //int columnCount = dgvCiudadanos.Columns.Count;
+                        //string columnNames = "";
+                        //string[] outputCsv = new string[dgvCiudadanos.Rows.Count + 1];
+                        //for (int i = 0; i < columnCount; i++)
+                        //{
+                        //    columnNames += dgvCiudadanos.Columns[i].HeaderText.ToString() + ",";
+                        //}
+                        //outputCsv[0] += columnNames;
+                        //for (int i = 1; i < dgvCiudadanos.Rows.Count; i++)
+                        //{
+                        //    for (int j = 0; j < columnCount; j++)
+                        //    {
+                        //        var columnEdad = int.Parse(dgvCiudadanos.Rows[i - 1].Cells[3].Value.ToString());
+                        //        if (columnEdad < 60)
+                        //        {
+                        //            outputCsv[i] += dgvCiudadanos.Rows[i - 1].Cells[j].Value.ToString() + ",";
+                        //        }
+                        //    }
+                        //}
                         File.WriteAllLines(sfd.FileName, outputCsv, Encoding.UTF8);
                         MessageBox.Show("Datos exportados correctamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

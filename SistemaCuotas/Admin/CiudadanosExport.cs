@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -63,6 +64,7 @@ namespace SistemaCuotas.Admin
             var ciudadanos = GetCiudadanos();
             if (ciudadanos != null)
             {
+                // var ciudadanos60 = ciudadanos.Where()
                 SetDgvData(ciudadanos);
             }
         }
@@ -157,7 +159,6 @@ namespace SistemaCuotas.Admin
                                 columnNames += dgvCiudadanos.Columns[i].HeaderText.ToString() + ",";
                             }
                             outputCsv[0] += columnNames;
-
                             for (int i = 1; i < dgvCiudadanos.Rows.Count; i++)
                             {
                                 for (int j = 0; j < columnCount; j++)

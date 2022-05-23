@@ -30,6 +30,7 @@ namespace SistemaCuotas.Admin
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@ namespace SistemaCuotas.Admin
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvCiudadanos = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -74,6 +74,16 @@ namespace SistemaCuotas.Admin
             this.splitContainer1.SplitterDistance = 161;
             this.splitContainer1.TabIndex = 0;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(592, 83);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(94, 29);
+            this.btnActualizar.TabIndex = 14;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -86,17 +96,18 @@ namespace SistemaCuotas.Admin
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(735, 81);
+            this.button1.Location = new System.Drawing.Point(704, 82);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 29);
+            this.button1.Size = new System.Drawing.Size(160, 29);
             this.button1.TabIndex = 12;
-            this.button1.Text = "Asignar Cuota";
+            this.button1.Text = "Status Ciudadano";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(1104, 81);
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminar.Location = new System.Drawing.Point(1104, 82);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(94, 29);
             this.btnEliminar.TabIndex = 11;
@@ -106,7 +117,7 @@ namespace SistemaCuotas.Admin
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(994, 81);
+            this.btnEditar.Location = new System.Drawing.Point(994, 82);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(94, 29);
             this.btnEditar.TabIndex = 10;
@@ -121,7 +132,7 @@ namespace SistemaCuotas.Admin
             this.ddlFieldFilter.Items.AddRange(new object[] {
             "Nombre",
             "Clave"});
-            this.ddlFieldFilter.Location = new System.Drawing.Point(450, 82);
+            this.ddlFieldFilter.Location = new System.Drawing.Point(379, 83);
             this.ddlFieldFilter.Name = "ddlFieldFilter";
             this.ddlFieldFilter.Size = new System.Drawing.Size(151, 28);
             this.ddlFieldFilter.TabIndex = 9;
@@ -132,13 +143,13 @@ namespace SistemaCuotas.Admin
             this.txtSearch.MaxLength = 150;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "Buscar por nombre o clave";
-            this.txtSearch.Size = new System.Drawing.Size(402, 27);
+            this.txtSearch.Size = new System.Drawing.Size(331, 27);
             this.txtSearch.TabIndex = 8;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(883, 81);
+            this.btnAdd.Location = new System.Drawing.Point(883, 82);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 29);
             this.btnAdd.TabIndex = 7;
@@ -162,16 +173,6 @@ namespace SistemaCuotas.Admin
             this.dgvCiudadanos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCiudadanos.Size = new System.Drawing.Size(1228, 485);
             this.dgvCiudadanos.TabIndex = 2;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(625, 82);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(94, 29);
-            this.btnActualizar.TabIndex = 14;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // CiudadanosControl
             // 

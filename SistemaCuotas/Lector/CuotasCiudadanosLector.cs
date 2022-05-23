@@ -57,5 +57,11 @@ namespace SistemaCuotas.Lector
         {
             
         }
+
+        private void txtCuotaSearch_TextChanged(object sender, EventArgs e)
+        {
+            string rowFilter = string.Format("Concepto LIKE '%{0}%'", txtCuotaSearch.Text.Trim());
+            (dgvCuotasCiudadano.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+        }
     }
 }

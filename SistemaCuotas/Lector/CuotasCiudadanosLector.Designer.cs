@@ -57,6 +57,7 @@ namespace SistemaCuotas.Lector
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCuotasCiudadano = new System.Windows.Forms.DataGridView();
+            this.txtCuotaSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -75,6 +76,7 @@ namespace SistemaCuotas.Lector
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txtCuotaSearch);
             this.splitContainer1.Panel1.Controls.Add(this.lblStatusCuotas);
             this.splitContainer1.Panel1.Controls.Add(this.lblCutoasAsignadas);
             this.splitContainer1.Panel1.Controls.Add(this.lblOcupacion);
@@ -112,7 +114,7 @@ namespace SistemaCuotas.Lector
             // lblStatusCuotas
             // 
             this.lblStatusCuotas.AutoSize = true;
-            this.lblStatusCuotas.Location = new System.Drawing.Point(387, 410);
+            this.lblStatusCuotas.Location = new System.Drawing.Point(824, 411);
             this.lblStatusCuotas.Name = "lblStatusCuotas";
             this.lblStatusCuotas.Size = new System.Drawing.Size(0, 20);
             this.lblStatusCuotas.TabIndex = 36;
@@ -120,7 +122,7 @@ namespace SistemaCuotas.Lector
             // lblCutoasAsignadas
             // 
             this.lblCutoasAsignadas.AutoSize = true;
-            this.lblCutoasAsignadas.Location = new System.Drawing.Point(196, 410);
+            this.lblCutoasAsignadas.Location = new System.Drawing.Point(633, 411);
             this.lblCutoasAsignadas.Name = "lblCutoasAsignadas";
             this.lblCutoasAsignadas.Size = new System.Drawing.Size(0, 20);
             this.lblCutoasAsignadas.TabIndex = 35;
@@ -218,7 +220,7 @@ namespace SistemaCuotas.Lector
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(261, 410);
+            this.label13.Location = new System.Drawing.Point(698, 411);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(120, 20);
             this.label13.TabIndex = 23;
@@ -227,7 +229,7 @@ namespace SistemaCuotas.Lector
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(61, 410);
+            this.label12.Location = new System.Drawing.Point(498, 411);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(129, 20);
             this.label12.TabIndex = 22;
@@ -351,6 +353,15 @@ namespace SistemaCuotas.Lector
             this.dgvCuotasCiudadano.Size = new System.Drawing.Size(942, 389);
             this.dgvCuotasCiudadano.TabIndex = 1;
             // 
+            // txtCuotaSearch
+            // 
+            this.txtCuotaSearch.Location = new System.Drawing.Point(12, 408);
+            this.txtCuotaSearch.Name = "txtCuotaSearch";
+            this.txtCuotaSearch.PlaceholderText = "Buscar por concepto";
+            this.txtCuotaSearch.Size = new System.Drawing.Size(317, 27);
+            this.txtCuotaSearch.TabIndex = 43;
+            this.txtCuotaSearch.TextChanged += new System.EventHandler(this.txtCuotaSearch_TextChanged);
+            // 
             // CuotasCiudadanoLector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -405,5 +416,6 @@ namespace SistemaCuotas.Lector
         private System.Windows.Forms.Label lblCurp;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblClave;
+        private System.Windows.Forms.TextBox txtCuotaSearch;
     }
 }

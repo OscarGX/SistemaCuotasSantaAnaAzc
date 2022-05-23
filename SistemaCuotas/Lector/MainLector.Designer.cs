@@ -36,11 +36,13 @@ namespace SistemaCuotas.Lector
             this.cuotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -54,6 +56,7 @@ namespace SistemaCuotas.Lector
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
             // 
@@ -68,11 +71,11 @@ namespace SistemaCuotas.Lector
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(533, 38);
+            this.label1.Location = new System.Drawing.Point(129, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 37);
+            this.label1.Size = new System.Drawing.Size(705, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Sistema Cuotas";
+            this.label1.Text = "Control de Cuotas Comunales Santa Ana Azcapotzaltongo";
             // 
             // menuStrip1
             // 
@@ -116,6 +119,16 @@ namespace SistemaCuotas.Lector
             this.pnlMain.Size = new System.Drawing.Size(1210, 703);
             this.pnlMain.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaCuotas.Properties.Resources.logo_edited;
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.Location = new System.Drawing.Point(12, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 46);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainLector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -134,6 +147,7 @@ namespace SistemaCuotas.Lector
             this.splitContainer1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,5 +161,6 @@ namespace SistemaCuotas.Lector
         private System.Windows.Forms.ToolStripMenuItem cuotasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

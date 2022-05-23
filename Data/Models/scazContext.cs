@@ -28,7 +28,7 @@ namespace Data.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost;port=3306;user=root;password=1234;database=scaz", ServerVersion.Parse("8.0.16-mysql"));
+                optionsBuilder.UseMySql("server=localhost;port=3306;user=root;password=1234;database=scaz", ServerVersion.Parse("8.0.29-mysql"));
             }
         }
 

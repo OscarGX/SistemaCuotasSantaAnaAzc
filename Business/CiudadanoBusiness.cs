@@ -59,7 +59,10 @@ namespace Business
 
         public CiudadanoDomainModel GetCiudadanoByIdWithCuotas(long clave)
         {
-            var ciudadano = _context.Ciudadanos.Include(cd => cd.Cuotasciudadanos)
+            var ciudadano = _context.Ciudadanos
+                .AsNoTracking()
+                .Include(x => x.OcupacionNavigation)
+                .Include(cd => cd.Cuotasciudadanos)
                 .ThenInclude(cdd => cdd.FolioNavigation)
                 .FirstOrDefault(c => c.Clave == clave);
             if (ciudadano != null)
@@ -79,6 +82,12 @@ namespace Business
                     ApellidoMaterno = ciudadano.ApellidoMaterno,
                     FechaRegistro = ciudadano.FechaRegistro,
                     Ocupacion = ciudadano.Ocupacion,
+                    OcupacionDomainModel = new OcupacionDomainModel
+                    {
+                        Descripcion = ciudadano.OcupacionNavigation.Descripcion,
+                        Idocup = ciudadano.OcupacionNavigation.Idocup,
+                        Nombre = ciudadano.OcupacionNavigation.Nombre,
+                    },
                     Cuotasciudadanos = ciudadano.Cuotasciudadanos.OrderByDescending(x => x.Id).Select(ciu => new CuotaCiudadanoDomainModel {
                         Apoyo = ciu.Apoyo,
                         Ciudadano = ciu.Ciudadano,
